@@ -26,7 +26,7 @@ describe("Student registration form tests", () => {
         cy.url().should('include', 'automation-practice-form');
     })
 
-    it("Student with with valid input in all fields could be successfully created", () => {
+    it("Student with valid input in all fields could be successfully created", () => {
         // Paje Object model could be used for easier code reading and reusing
         // For example:
         // class Student_Registration_Form_Po {
@@ -34,13 +34,13 @@ describe("Student registration form tests", () => {
         //         cy.get('#firstName').type(firstName); // Fill the first name field
         //     }
         // }
-        // export default AutoStore_Homepage_Po;
+        // export default Student_Registration_Form_Po;
         //
         // Or custom commands like:
         // Cypress.Commands.add("LocateFieldAndEnterValue", (locator, value) => {
         //     cy.get(locator).type(value);
         //   })
-        cy.log("Student with with valid input in all fields could be successfully created")
+        cy.log("Student with valid input in all fields could be successfully created");
         cy.get('#firstName').type(firstName); // Fill the first name field
         cy.get('#lastName').type(lastName); // Fill the last name field
         cy.get('#userEmail').type(email); // Fill the email field
@@ -81,6 +81,7 @@ describe("Student registration form tests", () => {
                 .and('contain', address)
                 .and('contain', this.selectedState + " " + this.selectedCity)
         })
+        cy.log("Student with valid input in all fields successfully created and all entered information displayed on the success modal window");
     })
 });
 
